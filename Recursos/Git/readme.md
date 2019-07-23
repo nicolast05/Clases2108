@@ -36,6 +36,12 @@ git commit -m "algún texto que indique lo que se ha hecho"
 git push origin <nombre de la rama>
 ```
 
+## Traer los archivos desde un repositorio remoto
+
+```
+git pull origin <nombre de la rama>
+```
+
 ## Configuración de identidad global
 
 ```
