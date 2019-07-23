@@ -12,3 +12,11 @@ npm i --save bootstrap
 		"src/styles.css"
     ]
 ```
+
+### Alternativa
+
+Agregar a index.html
+
+```
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+```
