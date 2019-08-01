@@ -9,3 +9,5 @@
 ## Temario por clase
 
 1. Introducción: Entorno de desarrollo y creación de componentes
+
+2. Creación de componentes, inserción de un componente dentro de otro, eventos html. Uso de la directiva estructural *ngIf
