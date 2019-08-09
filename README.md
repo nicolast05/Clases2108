@@ -12,6 +12,8 @@
 
 2. Creación de componentes, inserción de un componente dentro de otro, eventos html. Uso de la directiva estructural *ngIf
 
-3. Entendiendo los servicios. Uso y aplicación para compartir datos
+3. Entendiendo las entradas y salidas
 
-4. Validando formularios con FormsModule
+4. Entendiendo los servicios. Uso y aplicación para compartir datos
+
+5. Validando formularios con FormsModule
