@@ -3,13 +3,23 @@
 
     <form class="col-6" #formulario="ngForm">
       <div class="form-group">
-        <input type="text" placeholder="Correo" class="form-control" ngModel name="correo" required>
+        <input type="email" placeholder="Correo" class="form-control" ngModel name="correo" required email
+          #correo="ngModel">
+        <span *ngIf="correo.invalid && correo.touched && correo.errors.required">El correo es obligatorio</span>
+        <span *ngIf="correo.invalid && correo.touched && correo.errors.email">El formato no es de un correo</span>
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Nombre" class="form-control" ngModel name="nombre" required>
+        <input type="text" placeholder="Nombre" class="form-control" ngModel name="nombre" required #nombre="ngModel">
+        <span *ngIf="nombre.invalid && nombre.touched">El nombre es obligatorio</span>
       </div>
       <div class="form-group">
-        <input type="password" placeholder="Contrasena" class="form-control" ngModel name="contrasena" required>
+        <input type="password" placeholder="Contrasena" class="form-control" ngModel name="contrasena" required
+          #contrasena="ngModel">
+        <span *ngIf="contrasena.invalid && contrasena.touched">La contrasena es obligatoria</span>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Edad" name="edad" class="form-control" ngModel #edad="ngModel" required
+          [min]="edadMinima">
       </div>
       <div>
         <button (click)="registrar(formulario)" class="btn btn-success btn-block">

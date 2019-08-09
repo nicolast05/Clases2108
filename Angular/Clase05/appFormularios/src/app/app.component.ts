@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
 
+  edadMinima = 18
+
   registrar(f: NgForm) {
     console.log(f)
   }
