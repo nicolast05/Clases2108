@@ -21,6 +21,7 @@ export class AppComponent {
       correo: new FormControl(null, [Validators.required, Validators.email, Validadores.validadorCorreoEmpresarial]),
       nombre: new FormControl("Sergio", Validators.required),
       contrasena: new FormControl(null, [Validators.required, Validators.pattern(/^[a-zA-Z]{6,15}$/i)]),
+      confirmacion: new FormControl(null, this.validarConfirmacion),
       edad: new FormControl(null, [Validators.required, this.rangoEdades(18, 30)])
     })
   }
@@ -41,6 +42,24 @@ export class AppComponent {
     return validadorEdades
   }
 
+  validarConfirmacion(control: AbstractControl): { [s: string]: boolean } {
+    if (!control || !control.parent) return null
+
+    const contrasena = control.parent.get("contrasena")
+    const confirmacion = control.parent.get("confirmacion")
+
+    if (!contrasena || !confirmacion) return null
+
+    if (contrasena.value == "") return null
+
+    if (contrasena.value != confirmacion.value) return { contrasenaNoCoincide: true }
+
+    return null
+
+
+
+
+  }
 
 
 
