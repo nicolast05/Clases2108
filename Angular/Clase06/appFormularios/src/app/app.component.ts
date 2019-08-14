@@ -1,5 +1,7 @@
+import { Validadores } from './validadores';
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -10,34 +12,36 @@ export class AppComponent {
 
   group: FormGroup
 
-  listaCorreosGratuitos = ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"]
+
 
   constructor() { }
 
   ngOnInit() {
     this.group = new FormGroup({
-      correo: new FormControl(null, [Validators.required, Validators.email, this.validadorCorreoEmpresarial.bind(this)]),
+      correo: new FormControl(null, [Validators.required, Validators.email, Validadores.validadorCorreoEmpresarial]),
       nombre: new FormControl("Sergio", Validators.required),
       contrasena: new FormControl(null, [Validators.required, Validators.pattern(/^[a-zA-Z]{6,15}$/i)]),
-      edad: new FormControl(null, Validators.required)
+      edad: new FormControl(null, [Validators.required, this.rangoEdades(18, 30)])
     })
   }
 
-  validadorCorreoEmpresarial(control: FormControl): { [s: string]: boolean } {
+  rangoEdades(min: number, max: number) {
+    const validadorEdades = (control: AbstractControl): { [s: string]: boolean } => {
+      if (control && control.value) {
+        const edad = +control.value
 
-    if (control && control.value) {
-      const valor = control.value
-      const partes = valor.split("@")
+        if (edad >= min && edad <= max) return null
 
-      if (partes.length != 2) return null
+        return { edadProhibida: true }
+      }
 
-      if (this.listaCorreosGratuitos.indexOf(partes[1]) == -1) return null
-
-      return { correoGratuito: true }
+      return null
     }
 
-    return null
+    return validadorEdades
   }
+
+
 
 
   registrar() {
