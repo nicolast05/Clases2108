@@ -22,6 +22,13 @@ export class AppComponent {
       confirmacion: new FormControl(null, this.validarConfirmacion),
       edad: new FormControl(null, [Validators.required, this.rangoEdades(18, 30)])
     })
+
+
+    this.group.valueChanges.subscribe(
+      cambios => console.log(cambios.correo)
+    )
+
+
   }
 
   rangoEdades(min: number, max: number) {
