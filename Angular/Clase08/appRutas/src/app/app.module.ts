@@ -7,7 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ListadoComponent } from './listado/listado.component';
 import { EdicionComponent } from './edicion/edicion.component';
-import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component'
+import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
+import { ListadoCursosComponent } from './listado-cursos/listado-cursos.component'
 
 //const rutas: Route[]
 const rutas: Routes = [
@@ -17,6 +18,11 @@ const rutas: Routes = [
       { path: "register", component: RegistroComponent },
       { path: "listado", component: ListadoComponent },
       { path: "edicion/:id", component: EdicionComponent }
+    ]
+  },
+  {
+    path: "cursos", children: [
+      { path: "listado/:cursoid", component: ListadoCursosComponent }
     ]
   },
   /* { path: "**", component: NoEncontradoComponent } */
@@ -31,7 +37,8 @@ const rutas: Routes = [
     RegistroComponent,
     ListadoComponent,
     EdicionComponent,
-    NoEncontradoComponent
+    NoEncontradoComponent,
+    ListadoCursosComponent
   ],
   imports: [
     BrowserModule,

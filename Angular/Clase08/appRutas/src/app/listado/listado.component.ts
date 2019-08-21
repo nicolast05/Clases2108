@@ -1,3 +1,4 @@
+import { UsuarioService } from '../usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,16 +8,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-  pag
-  tam
-  ord
+  pag: number
+  tam: number
+  ord: string
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  personas = []
+
+  constructor(private activatedRoute: ActivatedRoute, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.pag = this.activatedRoute.snapshot.queryParamMap.get("pag")
-    this.tam = this.activatedRoute.snapshot.queryParamMap.get("tam")
+    this.pag = +this.activatedRoute.snapshot.queryParamMap.get("pag")
+    this.tam = +this.activatedRoute.snapshot.queryParamMap.get("tam")
     this.ord = this.activatedRoute.snapshot.queryParamMap.get("ord")
+
+    this.listar()
+  }
+
+  listar() {
+    this.personas = this.usuarioService.listado(this.pag, this.tam, this.ord)
   }
 
 }
