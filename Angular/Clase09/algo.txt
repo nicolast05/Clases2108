@@ -1,0 +1,9 @@
+appcomponent
+
+cargo /usuario y 
+	se carga Listado component
+	router outlet importante para iniciar otro componente
+
+
+Guards:
+
