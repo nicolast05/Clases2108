@@ -7,9 +7,18 @@ import { ListadoAlumnoComponent } from './listado-alumno/listado-alumno.componen
 import { NuevoAlumnoComponent } from './nuevo-alumno/nuevo-alumno.component';
 import { EdicionAlumnoComponent } from './edicion-alumno/edicion-alumno.component';
 import { Routes, RouterModule } from "@angular/router"
+import { AutenticacionGuard } from './guards/autenticacion.guard';
+import { AutorizacionGuard } from './guards/autorizacion.guard';
 
 const rutas: Routes = [
-
+  { path: "", component: LoginComponent },
+  {
+    path: "alumno", canActivate: [AutenticacionGuard], children: [
+      { path: "", component: ListadoAlumnoComponent },
+      { path: "nuevo", component: NuevoAlumnoComponent },
+      { path: "edicion", component: EdicionAlumnoComponent },
+    ]
+  }
 ]
 @NgModule({
   declarations: [
@@ -20,7 +29,8 @@ const rutas: Routes = [
     EdicionAlumnoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(rutas)
   ],
   providers: [],
   bootstrap: [AppComponent]

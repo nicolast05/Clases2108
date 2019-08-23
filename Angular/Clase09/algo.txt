@@ -5,5 +5,17 @@ cargo /usuario y
 	router outlet importante para iniciar otro componente
 
 
-Guards:
+Guards: el guard se comporta como servicio podemos usar el decorados Injectable
+y usar el provideIn para evitar registrarlo en algun modulo en la seccion de provider
+
+el guard protege rutas
+la implementacion de una interface Can activated quien pertenece al angular route
+
+el metodo canactivated devuelve un boolean
+
+los guard se asignan segun el tipo de guards que es.
+la propiedad canActivated recibe un arreglo
+
+
+
 
