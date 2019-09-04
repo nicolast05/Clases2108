@@ -1,0 +1,17 @@
+<p>Estado de la promesa {{estado}}</p>
+<table>
+  <tbody>
+    <tr *ngFor="let persona of personas | async">
+      <td>{{persona.nombre}}</td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <tbody>
+    <tr *ngFor="let receta of recetas">
+      <td>{{receta.titulo}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>{{error}}</p>

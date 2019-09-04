@@ -1,0 +1,31 @@
+crud
+
+create post
+read get
+update put
+delete delete
+
+http
+httpclientmodule
+
+
+si me devuelve un observable puedo usar un sucribe 
+
+
+primero el constructor
+segundo el ngonchange
+tercero en ngoninit
+
+--estilo
+npm i --save bootstrap
+angular jason
+styler
+
+
+--rutas
+
+
+--snapshot foto del momento de la ruta q
+
+--reactformmodule
+stevalues patchvalues

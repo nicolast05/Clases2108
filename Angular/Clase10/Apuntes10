@@ -1,0 +1,13 @@
+promesa valor que puede llegar en un tiempo establecido o nunca
+3 tipos de promesas
+	las q  se cumplen todas
+	las concatenadas
+	las que basta 1 que se cumpla
+
+	instancia de la clase promise a partir de Angular 6
+	la clase Promise necesita una parametro que es una funcion
+
+	3 estados
+	resuelta
+	rechazada
+	pendiente
