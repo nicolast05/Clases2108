@@ -15,6 +15,10 @@ export class AppComponent {
 
   ngOnInit() {
     this.listar()
+
+    this.alumnosService.onActualizar.subscribe(
+      () => this.listar()
+    )
   }
 
   listar() {
@@ -24,5 +28,9 @@ export class AppComponent {
 
   editar(_id: string) {
     this.router.navigate(["/alumno", "editar", _id])
+  }
+
+  nuevo() {
+    this.router.navigate(["/alumno", "nuevo"])
   }
 }

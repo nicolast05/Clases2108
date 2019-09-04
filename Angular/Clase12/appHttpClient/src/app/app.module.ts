@@ -6,12 +6,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { EditarComponent } from './editar/editar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NuevoComponent } from './nuevo/nuevo.component';
 
 const rutas: Routes = [
   {
     path: "alumno", children: [
       {
         path: "editar/:_id", component: EditarComponent
+      },
+      {
+        path: "nuevo", component: NuevoComponent
       }
     ]
   }
@@ -22,7 +26,8 @@ const rutas: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    EditarComponent
+    EditarComponent,
+    NuevoComponent
   ],
   imports: [
     BrowserModule,

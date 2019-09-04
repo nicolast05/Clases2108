@@ -1,6 +1,6 @@
-<form [formGroup]="grupo" (ngSubmit)="actualizar()">
+<form [formGroup]="grupo" (ngSubmit)="guardar()">
   <input type="text" name="nombre" formControlName="nombre">
   <input type="text" name="apellido" formControlName="apellido">
-  <button [disabled]="grupo.invalid">Actualizar</button>
+  <button [disabled]="grupo.invalid">Guardar</button>
   <button (click)="volver()">volver</button>
 </form>

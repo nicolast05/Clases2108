@@ -4,11 +4,11 @@ import { AlumnoService } from '../alumno.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  selector: 'app-nuevo',
+  templateUrl: './nuevo.component.html',
+  styleUrls: ['./nuevo.component.css']
 })
-export class EditarComponent implements OnInit {
+export class NuevoComponent implements OnInit {
   _id: string
   grupo: FormGroup
 
@@ -21,25 +21,16 @@ export class EditarComponent implements OnInit {
       apellido: new FormControl(null, Validators.required)
     })
 
-    //this._id = this.activateRoute.snapshot.paramMap.get("_id")
-    this.activateRoute.paramMap.subscribe(
-      (data: any) => {
-        this._id = data.params._id
-        this.alumnoService.detallar(this._id)
-          .subscribe(
-            resp => this.grupo.patchValue(resp)
-          )
-      }
-    )
+
 
 
   }
 
-  actualizar() {
-    this.alumnoService.modificar(this.grupo.getRawValue())
+  guardar() {
+    this.alumnoService.insertar(this.grupo.getRawValue())
       .subscribe(resp => {
         this.alumnoService.onActualizar.next()
-        alert("Actualizoooo!!")
+        alert("Graboooooo!!")
       })
 
   }
