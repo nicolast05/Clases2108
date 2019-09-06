@@ -1,0 +1,15 @@
+persistencia de datos localstorage o sesionstorage
+
+tiene que ser serializable
+
+f12 aplicacion session storage
+
+solid single responsabilidad unica
+
+canActivate  protege ruta padre y todas hijas
+canactivatechild solo protege ulti 
+cadeactivated verificar si hay data no salvada
+resolve para que un componente no se cargue antes de que cargue su data
+
+los guard reciben como parametro al componente
+
