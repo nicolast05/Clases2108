@@ -1,0 +1,64 @@
+corchetes en html significa una entrada
+
+ngmodel pertence al formmodule es necesario su importacion
+
+ngmodelchangue es un evento
+
+ngmodel entrada
+
+ngmodelchange salida
+
+---------------------
+modulizacion:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<p>{{texto | reducidor:4:'B'}}</p>
+
+<input type="text" (input)="busqueda=$event.target.value">
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Titulo
+      </th>
+      <th>
+        Autor
+      </th>
+      <th>
+        Resumen
+      </th>
+    </tr>
+  </thead>
+  <tr *ngFor="let libro of libros | filtro: busqueda">
+    <td>
+      {{libro.titulo}}
+    </td>
+    <td>
+      {{libro.autor}}
+    </td>
+    <td>
+      {{libro.sinopsis}}
+    </td>
+  </tr>
+</table>
