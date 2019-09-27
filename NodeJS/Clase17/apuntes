@@ -1,0 +1,52 @@
+se instala express npm i --save
+
+npm i --save typesscript
+npm i --save express
+npm i --save @types/express
+npm i --save @types/node
+npm i --save ts-node
+
+
+node solo lee js nunca ts  
+
+ts-node
+
+:
+
+en mongo son coleeciones no tablas
+graphql competencia de apirest
+
+
+clase 18
+
+tsc-watch -p tsconfig.build.json --onSuccess "node dist/server.js"
+
+build es usado para transpilar
+start:prod
+
+
+--save-dev = -D
+
+put todos los campos
+
+201 todo a sido corecto y algo ha sido mifificado
+
+delegacion de rutas
+
+se crea carpeta routes
+ususarios.route.ts importamos express
+generamos RouterUsuarios = express.Router()
+para el metodo get hago lo mismo que el ejemplo anterior pero reemplazo app por RouterUsuarios
+
+los demas metodos igual.
+
+necesitamos vincularlo para eso vamos a exportar con export default RouterUsuarios
+
+vamos al server.ts y borro los 4 metodso y le digo que importe RouterUsuarios desde routes
+con import RouterUsuarios from "./routes/usuarios.route"
+
+middelware proceso que se realiza antes de entrar al proceso principal de node
+
+EL INDEX.TS importante 
+
+
