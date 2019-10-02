@@ -1,0 +1,19 @@
+jwt.io
+
+headers.append() 2 parametros 1 nombre de cabecera , 2 el valor
+
+se encesita un subscribe para que un observable funcione
+
+en network f12 pstañña all se ven las llamadas (peticiones)
+
+el interceptor intercepa las peticiones a diferencia del servicio implementa una interface
+
+app.interceptor.ts
+
+la clase tiene que implementar HttpInterceptor esto crea una metodo intercept este tiene 2 parametros
+el primero es la peticion y el segundo clona la peticion 
+
+multi oara usar varios interceptores.
+
+
+nestjs framework enfocado backend

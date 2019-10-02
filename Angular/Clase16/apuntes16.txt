@@ -1,0 +1,7 @@
+la directiva es una clase y puede tener constructor
+
+elementref es un servicio que permite hace referencia al html
+
+nativeelement es el equivalente docuemnt.getElementbyid con esto obtengo la propiedad style
+
+mi-directiva con corchetes busca la propiedad

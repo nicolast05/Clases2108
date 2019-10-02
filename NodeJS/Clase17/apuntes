@@ -50,3 +50,9 @@ middelware proceso que se realiza antes de entrar al proceso principal de node
 EL INDEX.TS importante 
 
 
+clase 19
+
+instalar hapi joi
+npm i @hapi/joi --save dependencia del proyecto
+
+git stash lo guarda como si fuera borrador
